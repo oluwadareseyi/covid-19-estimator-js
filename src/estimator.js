@@ -6,7 +6,7 @@ const covid19ImpactEstimator = (data) => {
 
   const { periodType, timeToElapse } = data;
 
-  let convertToDays = timeToElapse
+  let convertToDays = timeToElapse;
 
   switch (periodType) {
     case 'months':
@@ -18,11 +18,11 @@ const covid19ImpactEstimator = (data) => {
       break;
 
     default:
-      timeToElapse;
+      convertToDays = timeToElapse;
       break;
   }
 
-  const power = parseInt(convertToDays / 3);
+  const power = parseInt(convertToDays / 3, 10);
   impact.infectionsByRequestedTime = impact.currentlyInfected * 2 ** power;
   severeImpact.infectionsByRequestedTime = severeImpact.currentlyInfected * 2 ** power;
   return {
