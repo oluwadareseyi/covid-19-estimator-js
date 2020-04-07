@@ -22,7 +22,7 @@ const covid19ImpactEstimator = (data) => {
       break;
   }
 
-  const power = convertToDays / 3;
+  const power = parseInt(convertToDays / 3, 10);
   impact.infectionsByRequestedTime = impact.currentlyInfected * 2 ** power;
   severeImpact.infectionsByRequestedTime = severeImpact.currentlyInfected * 2 ** power;
 
